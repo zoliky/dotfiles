@@ -1,0 +1,31 @@
+# ----------------------------------------------------------------------------
+#           FILE: .editorconfig
+#    DESCRIPTION: top-most EditorConfig file
+#         AUTHOR: Zoltán Király <zoliky@gmail.com>
+# ----------------------------------------------------------------------------
+
+# This file is for unifying the coding style for different editors and IDEs
+# More information at https://editorconfig.org
+
+# Top-most EditorConfig file
+root = true
+
+# All files
+[*]
+indent_style = space    # Use spaces when the <Tab> key is pressed
+indent_size = 2         # Use two spaces for indentation
+end_of_line = lf        # Unix-style newlines
+charset = utf-8         # Set default encoding to UTF-8
+
+# Dotfiles
+[{dotfiles,dotvim}/**]
+indent_size = 4
+
+# Python and PHP
+[*.{py,php}]
+indent_size = 4
+
+# Golang
+[*.go]
+indent_style = tab
+indent_size = 8

@@ -1,0 +1,9 @@
+# ----------------------------------------------------------------------------
+#           FILE: .gitconfig
+#    DESCRIPTION: git configuration file
+#         AUTHOR: Zoltán Király <zoliky@gmail.com>
+# ----------------------------------------------------------------------------
+
+[user]
+    name  = Zoltán Király
+    email = zoliky@gmail.com

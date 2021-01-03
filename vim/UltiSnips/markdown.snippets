@@ -1,0 +1,19 @@
+snippet h= "Create an h1 using === style" b
+${1:Title}
+${1/./=/g}
+$0
+endsnippet
+
+snippet h- "Create an h2 using --- style" b
+${1:Title}
+${1/./-/g}
+$0
+endsnippet
+
+snippet img "Image" w
+![${1:Alt text}](${2:path/to/img.jpg}${3/.+/ "/}${3:Optional title}${3/.+/"/})
+endsnippet
+
+snippet link "Link" w
+[${1:Link text}](${2:https://www.example.com}${3/.+/ "/}${3:Title}${3/.+/"/})
+endsnippet

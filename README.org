@@ -1,0 +1,28 @@
+#+TITLE: Dotfiles
+#+AUTHOR: Zoltán Király
+#+EMAIL: zoliky@gmail.com
+#+DATE: <2021-01-03 Sun>
+
+** Installation
+
+#+begin_src shell
+  $ cd ~
+  $ git clone https://github.com/zoliky/dotfiles.git
+  $ cd dotfiles
+  $ make install
+#+end_src
+
+** Vim and Neovim
+
+*** Managing Plugins
+
+#+begin_src shell
+  :PackUpdate
+  :PackClean
+#+end_src
+
+*** Enabling Python Support in Neovim
+
+#+begin_src shell
+  $ pip3 install --user --upgrade neovim
+#+end_src

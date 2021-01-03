@@ -1,0 +1,105 @@
+# ----------------------------------------------------------------------------
+#           FILE: .muttrc
+#    DESCRIPTION: mutt configuration file
+#         AUTHOR: Zoltán Király <zoliky@gmail.com>
+# ----------------------------------------------------------------------------
+
+# ----------------------------------------------------------------------------
+# Options
+# ----------------------------------------------------------------------------
+# User variables must begin with "my_"
+set my_name        = "Zoltan Kiraly"
+set my_email       = "zoliky@gmail.com"
+set my_password    = ""
+
+set realname       = $my_name
+set from           = $my_email
+set imap_user      = $my_email
+set imap_pass      = $my_password
+set smtp_pass      = $my_password
+set smtp_url       = "smtps://$my_email@smtp.gmail.com:465/"
+set folder         = "imaps://imap.gmail.com:993"
+set spoolfile      = "+INBOX"
+set record         = "+[Gmail]/Sent Mail"
+set postponed      = "+[Gmail]/Drafts"
+set trash          = "+[Gmail]/Trash"
+set sleep_time     = 0
+set timeout        = 15  # Idle time before scanning (time in seconds)
+set mail_check     = 900 # How often to check for new mail (time in seconds)
+set imap_keepalive = 900 # Keep IMAP connection alive (time in seconds)
+set editor         = "nvim"
+set forward_format = "Fwd: %s"
+set sort           = "threads"
+set sort_aux       = "reverse-last-date-received"
+
+set delete        # Don't ask for confirmation when deleting
+set fast_reply    # Don't prompt for address when replying
+set include       # Include the original message when replying
+set forward_quote # Include the original message when forwarding
+unset copy        # Don't save copies of send message
+unset move        # Don't move mail from spool
+unset beep        # Disable error beeping
+unset markers     # Don't show "+" when wrapping lines
+
+# ----------------------------------------------------------------------------
+# Key bindings
+# ----------------------------------------------------------------------------
+# Vim-like key bindings
+bind attach,index,pager g noop
+bind pager gg top
+bind pager G bottom
+bind pager k previous-line
+bind pager j next-line
+bind attach,index gg first-entry
+bind attach,index G last-entry
+
+# Postponing messages
+bind compose p postpone-message
+bind index p recall-message
+
+# ----------------------------------------------------------------------------
+# Macros
+# ----------------------------------------------------------------------------
+# Gmail-specific macros
+bind editor <space> noop
+macro index,pager gi "<change-folder>=INBOX<enter>"
+macro index,pager ga "<change-folder>=[Gmail]/All Mail<enter>"
+macro index,pager gd "<change-folder>=[Gmail]/Drafts<enter>"
+macro index,pager gs "<change-folder>=[Gmail]/Sent Mail<enter>"
+macro index,pager gh "<change-folder>=[Gmail]/Spam<enter>"
+macro index,pager gt "<change-folder>=[Gmail]/Trash<enter>"
+
+# ----------------------------------------------------------------------------
+# Header
+# ----------------------------------------------------------------------------
+ignore *
+unignore Date: From: Subject: To: Cc:
+hdr_order Date: From: Subject: To: Cc:
+
+# ----------------------------------------------------------------------------
+# Paths
+# ----------------------------------------------------------------------------
+set alias_file       = ~/.mutt/aliases
+set mailcap_path     = ~/.mutt/mailcap
+set header_cache     = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
+source ~/.mutt/aliases
+
+# ----------------------------------------------------------------------------
+# Color
+# ----------------------------------------------------------------------------
+color hdrdefault    default         default
+color header        default         default     "^(From)"
+color header        default         default     "^(Subject)"
+color quoted        cyan            default
+color body          blue            default     [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
+color body          blue            default     (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
+color index         brightgreen     default     ~N # New messages
+color index         brightgreen     default     ~O # Unread messages
+color index         brightmagenta   default     ~T # Tagged messages
+color index         brightgreen     default     ~D # Marked for deletion
+color tree          magenta         default        # Thread arrows
+color status        color230        blue
+color indicator     black           brightblue
+color attachment    brightmagenta   default

@@ -1,0 +1,8 @@
+# ----------------------------------------------------------------------------
+#           FILE: .gitignore
+#    DESCRIPTION: global gitignore file
+#         AUTHOR: Zoltán Király <zoliky@gmail.com>
+# ----------------------------------------------------------------------------
+
+.DS_Store
+Session.vim
