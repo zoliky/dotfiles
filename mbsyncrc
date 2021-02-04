@@ -129,18 +129,9 @@ SyncState *
 # ----------------------------------------------------------------------------
 # Groups
 # ----------------------------------------------------------------------------
-# Personal
-Group gmail-zoliky
+# Gmail
+Group gmail
 Channel gmail-zoliky-inbox
-Channel gmail-zoliky-starred
-Channel gmail-zoliky-sent
-Channel gmail-zoliky-drafts
 Channel gmail-zoliky-trash
-
-# Work
-Group gmail-zolikydev
 Channel gmail-zolikydev-inbox
-Channel gmail-zolikydev-starred
-Channel gmail-zolikydev-sent
-Channel gmail-zolikydev-drafts
 Channel gmail-zolikydev-trash
