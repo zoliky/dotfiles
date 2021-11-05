@@ -54,74 +54,74 @@ Inbox ~/Maildir/gmail-zolikydev/INBOX
 # ----------------------------------------------------------------------------
 # Personal
 Channel gmail-zoliky-inbox
-Master :gmail-zoliky-remote:
-Slave :gmail-zoliky-local:
+Far :gmail-zoliky-remote:
+Near :gmail-zoliky-local:
 Patterns "INBOX"
 Create Both
 Expunge Both
 SyncState *
 
 Channel gmail-zoliky-starred
-Master :gmail-zoliky-remote:"[Gmail]/Starred"
-Slave :gmail-zoliky-local:"[Gmail].Starred"
+Far :gmail-zoliky-remote:"[Gmail]/Starred"
+Near :gmail-zoliky-local:"[Gmail].Starred"
 Create Both
 Expunge Both
 SyncState *
 
 Channel gmail-zoliky-sent
-Master :gmail-zoliky-remote:"[Gmail]/Sent Mail"
-Slave :gmail-zoliky-local:"[Gmail].Sent Mail"
+Far :gmail-zoliky-remote:"[Gmail]/Sent Mail"
+Near :gmail-zoliky-local:"[Gmail].Sent Mail"
 Create Both
 Expunge Both
 SyncState *
 
 Channel gmail-zoliky-drafts
-Master :gmail-zoliky-remote:"[Gmail]/Drafts"
-Slave :gmail-zoliky-local:"[Gmail].Drafts"
+Far :gmail-zoliky-remote:"[Gmail]/Drafts"
+Near :gmail-zoliky-local:"[Gmail].Drafts"
 Create Both
 Expunge Both
 SyncState *
 
 Channel gmail-zoliky-trash
-Master :gmail-zoliky-remote:"[Gmail]/Trash"
-Slave :gmail-zoliky-local:"[Gmail].Trash"
+Far :gmail-zoliky-remote:"[Gmail]/Trash"
+Near :gmail-zoliky-local:"[Gmail].Trash"
 Create Both
 Expunge Both
 SyncState *
 
 # Work
 Channel gmail-zolikydev-inbox
-Master :gmail-zolikydev-remote:
-Slave :gmail-zolikydev-local:
+Far :gmail-zolikydev-remote:
+Near :gmail-zolikydev-local:
 Patterns "INBOX"
 Create Both
 Expunge Both
 SyncState *
 
 Channel gmail-zolikydev-starred
-Master :gmail-zolikydev-remote:"[Gmail]/Starred"
-Slave :gmail-zolikydev-local:"[Gmail].Starred"
+Far :gmail-zolikydev-remote:"[Gmail]/Starred"
+Near :gmail-zolikydev-local:"[Gmail].Starred"
 Create Both
 Expunge Both
 SyncState *
 
 Channel gmail-zolikydev-sent
-Master :gmail-zolikydev-remote:"[Gmail]/Sent Mail"
-Slave :gmail-zolikydev-local:"[Gmail].Sent Mail"
+Far :gmail-zolikydev-remote:"[Gmail]/Sent Mail"
+Near :gmail-zolikydev-local:"[Gmail].Sent Mail"
 Create Both
 Expunge Both
 SyncState *
 
 Channel gmail-zolikydev-drafts
-Master :gmail-zolikydev-remote:"[Gmail]/Drafts"
-Slave :gmail-zolikydev-local:"[Gmail].Drafts"
+Far :gmail-zolikydev-remote:"[Gmail]/Drafts"
+Near :gmail-zolikydev-local:"[Gmail].Drafts"
 Create Both
 Expunge Both
 SyncState *
 
 Channel gmail-zolikydev-trash
-Master :gmail-zolikydev-remote:"[Gmail]/Trash"
-Slave :gmail-zolikydev-local:"[Gmail].Trash"
+Far :gmail-zolikydev-remote:"[Gmail]/Trash"
+Near :gmail-zolikydev-local:"[Gmail].Trash"
 Create Both
 Expunge Both
 SyncState *
