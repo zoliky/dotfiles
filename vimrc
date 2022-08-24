@@ -69,9 +69,9 @@ set nojoinspaces                " Don't use two spaces after '.' when joining
 " ----------------------------------------------------------------------------
 " Tabs and indenting
 " ----------------------------------------------------------------------------
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab       " Insert space characters instead of a tab character
 set autoindent      " Copy indent from current line when starting a new line
 
@@ -122,18 +122,18 @@ set encoding=utf-8  " Set default encoding to UTF-8
 " Autocommands
 " ----------------------------------------------------------------------------
 if has("autocmd")
-    augroup Misc
-        " Jump to the last known position when reopening a file
-        autocmd BufReadPost *
-            \ if line("'\"") > 1 && line("'\"") <= line("$") |
-            \   exe "normal! g`\"" |
-            \ endif
+  augroup Misc
+    " Jump to the last known position when reopening a file
+    autocmd BufReadPost *
+      \ if line("'\"") > 1 && line("'\"") <= line("$") |
+      \   exe "normal! g`\"" |
+      \ endif
 
-        if has("nvim")
-            " Switch to insert mode when entering a terminal buffer
-            autocmd TermOpen,BufEnter term://* startinsert
-        endif
-    augroup END
+    if has("nvim")
+      " Switch to insert mode when entering a terminal buffer
+      autocmd TermOpen,BufEnter term://* startinsert
+    endif
+  augroup END
 endif
 
 " ----------------------------------------------------------------------------
@@ -141,9 +141,9 @@ endif
 " ----------------------------------------------------------------------------
 " Strip trailing spaces
 function! Preserve(command)
-    let l:save = winsaveview()
-    execute a:command
-    call winrestview(l:save)
+  let l:save = winsaveview()
+  execute a:command
+  call winrestview(l:save)
 endfunction
 
 command! TrimWhitespace call Preserve("%s/\\s\\+$//e")
@@ -165,7 +165,7 @@ nnoremap Q <Nop>
 " Neovim specific
 " ----------------------------------------------------------------------------
 if has('nvim')
-    set inccommand=nosplit      " Incremental substitution
+  set inccommand=nosplit      " Incremental substitution
 endif
 
 " ----------------------------------------------------------------------------
@@ -209,16 +209,16 @@ nnoremap <silent> <leader>g :Grepper<CR>
 " fzf.vim
 nnoremap <silent> <C-p> :<C-u>FZF<CR>
 let g:fzf_colors = {
-    \ 'fg':      ['fg', 'Normal'],
-    \ 'bg':      ['bg', 'Normal'],
-    \ 'hl':      ['fg', 'Comment'],
-    \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-    \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-    \ 'hl+':     ['fg', 'Statement'],
-    \ 'info':    ['fg', 'PreProc'],
-    \ 'border':  ['fg', 'Ignore'],
-    \ 'prompt':  ['fg', 'Conditional'],
-    \ 'pointer': ['fg', 'Exception'],
-    \ 'marker':  ['fg', 'Keyword'],
-    \ 'spinner': ['fg', 'Label'],
-    \ 'header':  ['fg', 'Comment'] }
+  \ 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
