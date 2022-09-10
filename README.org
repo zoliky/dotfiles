@@ -3,7 +3,13 @@
 #+EMAIL: zoliky@gmail.com
 #+DATE: <2021-01-03 Sun>
 
-** Installation
+* About
+
+Dotfiles are configuration files that hold the settings for Unix/Linux applications.
+
+[[./static/vim.jpg]]
+
+* Installation
 
 #+begin_src shell
   $ cd ~
@@ -12,16 +18,16 @@
   $ make install
 #+end_src
 
-** Vim and Neovim
+* Vim and Neovim
 
-*** Managing Plugins
+** Managing Plugins
 
 #+begin_src shell
   :PackUpdate
   :PackClean
 #+end_src
 
-*** Enabling Python Support in Neovim
+** Enabling Python Support in Neovim
 
 #+begin_src shell
   $ pip3 install --user --upgrade neovim
