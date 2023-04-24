@@ -29,3 +29,10 @@ indent_size = 4
 [*.go]
 indent_style = tab
 indent_size = 8
+
+# Emacs Lisp
+[*.el]
+indent_style = unset
+indent_size = unset
+end_of_line = unset
+charset = unset
