@@ -16,3 +16,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Golang
 export PATH=$PATH:/usr/local/go/bin
+
+# TeX Live
+export PATH=$PATH:/usr/local/texlive/2023/bin/x86_64-linux
