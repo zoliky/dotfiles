@@ -7,9 +7,13 @@
 [user]
     name  = Zoltán Király
     email = zoliky@gmail.com
+    signingkey = 760C41C6C127B47B5A4AF86F35E2938AD6F8C869
 
 [init]
     defaultBranch = main
 
 [core]
     editor = vim
+
+[commit]
+    gpgsign = true
