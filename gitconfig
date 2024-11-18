@@ -7,7 +7,7 @@
 [user]
     name  = Zoltán Király
     email = zoliky@gmail.com
-    signingkey = 760C41C6C127B47B5A4AF86F35E2938AD6F8C869
+    signingkey = 9536E38F1A9F1A1E57DB0741B60543B6D86823B2
 
 [init]
     defaultBranch = main
