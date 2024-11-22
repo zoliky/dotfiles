@@ -5,133 +5,34 @@
 # ----------------------------------------------------------------------------
 
 # ----------------------------------------------------------------------------
-# Account information
+# IMAP Accounts
 # ----------------------------------------------------------------------------
-# Personal
-IMAPAccount gmail-zoliky
-Host imap.gmail.com
-User zoliky@gmail.com
-PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.emacs.d/.mbsyncpass-personal.gpg"
-AuthMechs LOGIN
-SSLType IMAPS
-CertificateFile /etc/ssl/certs/ca-certificates.crt
-
-# Work
-IMAPAccount gmail-zolikydev
-Host imap.gmail.com
-User zolikydev@gmail.com
-PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.emacs.d/.mbsyncpass-work.gpg"
-AuthMechs LOGIN
-SSLType IMAPS
-CertificateFile /etc/ssl/certs/ca-certificates.crt
+IMAPAccount mxroute
+Host mail.zoltankiraly.com
+UserCmd "gpg -q --for-your-eyes-only -d ~/.authinfo.gpg | awk -F ' ' '{ print $(NF-4); exit; }'"
+PassCmd "gpg -q --for-your-eyes-only -d ~/.authinfo.gpg | awk -F ' ' '{ print $NF; exit; }'"
+TLSType IMAPS
 
 # ----------------------------------------------------------------------------
-# Remote storage
+# IMAP Stores
 # ----------------------------------------------------------------------------
-# Personal
-IMAPStore gmail-zoliky-remote
-Account gmail-zoliky
+IMAPStore mxroute-remote
+Account mxroute
 
-# Work
-IMAPStore gmail-zolikydev-remote
-Account gmail-zolikydev
-
-# ----------------------------------------------------------------------------
-# Local storage
-# ----------------------------------------------------------------------------
-# Personal
-MaildirStore gmail-zoliky-local
-Path ~/Maildir/gmail-zoliky/
-Inbox ~/Maildir/gmail-zoliky/INBOX
-
-# Work
-MaildirStore gmail-zolikydev-local
-Path ~/Maildir/gmail-zolikydev/
-Inbox ~/Maildir/gmail-zolikydev/INBOX
+MaildirStore mxroute-local
+Path ~/.mail/mxroute/
+Inbox ~/.mail/mxroute/INBOX
+SubFolders Verbatim
 
 # ----------------------------------------------------------------------------
-# Connections
+# Channels
 # ----------------------------------------------------------------------------
-# Personal
-Channel gmail-zoliky-inbox
-Far :gmail-zoliky-remote:
-Near :gmail-zoliky-local:
-Patterns "INBOX"
+Channel mxroute
+Far :mxroute-remote:
+Near :mxroute-local:
+Patterns * !INBOX/spam
+Sync All
 Create Both
+Remove Both
 Expunge Both
 SyncState *
-
-Channel gmail-zoliky-starred
-Far :gmail-zoliky-remote:"[Gmail]/Starred"
-Near :gmail-zoliky-local:"[Gmail].Starred"
-Create Both
-Expunge Both
-SyncState *
-
-Channel gmail-zoliky-sent
-Far :gmail-zoliky-remote:"[Gmail]/Sent Mail"
-Near :gmail-zoliky-local:"[Gmail].Sent Mail"
-Create Both
-Expunge Both
-SyncState *
-
-Channel gmail-zoliky-drafts
-Far :gmail-zoliky-remote:"[Gmail]/Drafts"
-Near :gmail-zoliky-local:"[Gmail].Drafts"
-Create Both
-Expunge Both
-SyncState *
-
-Channel gmail-zoliky-trash
-Far :gmail-zoliky-remote:"[Gmail]/Trash"
-Near :gmail-zoliky-local:"[Gmail].Trash"
-Create Both
-Expunge Both
-SyncState *
-
-# Work
-Channel gmail-zolikydev-inbox
-Far :gmail-zolikydev-remote:
-Near :gmail-zolikydev-local:
-Patterns "INBOX"
-Create Both
-Expunge Both
-SyncState *
-
-Channel gmail-zolikydev-starred
-Far :gmail-zolikydev-remote:"[Gmail]/Starred"
-Near :gmail-zolikydev-local:"[Gmail].Starred"
-Create Both
-Expunge Both
-SyncState *
-
-Channel gmail-zolikydev-sent
-Far :gmail-zolikydev-remote:"[Gmail]/Sent Mail"
-Near :gmail-zolikydev-local:"[Gmail].Sent Mail"
-Create Both
-Expunge Both
-SyncState *
-
-Channel gmail-zolikydev-drafts
-Far :gmail-zolikydev-remote:"[Gmail]/Drafts"
-Near :gmail-zolikydev-local:"[Gmail].Drafts"
-Create Both
-Expunge Both
-SyncState *
-
-Channel gmail-zolikydev-trash
-Far :gmail-zolikydev-remote:"[Gmail]/Trash"
-Near :gmail-zolikydev-local:"[Gmail].Trash"
-Create Both
-Expunge Both
-SyncState *
-
-# ----------------------------------------------------------------------------
-# Groups
-# ----------------------------------------------------------------------------
-# Gmail
-Group gmail
-Channel gmail-zoliky-inbox
-Channel gmail-zoliky-trash
-Channel gmail-zolikydev-inbox
-Channel gmail-zolikydev-trash
