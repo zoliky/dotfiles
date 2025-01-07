@@ -4,8 +4,8 @@
 #         AUTHOR: Zoltán Király <zoliky@gmail.com>
 # ----------------------------------------------------------------------------
 
-# Path to oh-my-zsh
-export ZSH=$HOME/.oh-my-zsh
+# Path to Oh My Zsh
+export ZSH=/usr/local/share/ohmyzsh
 
 # Theme to load
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
